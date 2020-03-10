@@ -1,0 +1,55 @@
+Metaznaky regularnich vyrazu:
+
+^ - zacatek retezce
+$ - konec retezce
+^...$ - presna shoda
+
+Opakovace:
+* - opakovani predchoziho znaku (skupiny znaku) 0,1,2,3, ...
++ - 1,2,3, ...
+? - 0,1 (volitelne)
+{m,n} - m, m+1, m+2, ..., n
+{m,} - m, m+1, m+2, ...
+{m}
+
+Metaznak jako znak
+\* - hvezdicka (nikoli opakovac)
+
+Seskupovani (kulate zavorky)
+^a(xyz)*c$
+
+Alternativa
+(po|ut|st|ct|pa)
+
+Jeden ze znaku
+[kxd] - jeden znak - bud k, nebo x, nebo d
+[^kxd] - jeden znak - ani k, ani x, ani d
+[0-9] - jeden znak z daneho intervalu (zde cislice)
+[^0-9] - neni cislice
+
+Znak tecka
+. - jeden libovolny znak
+
+Nektere zkratky:
+\d - [0-9]
+\D - [^0-9]
+\s - whitespace (mezara, tabelator, ...)
+\S - not whitespace
+\w - [A-Za-z0-9_] "word"
+\W - [^A-Za-z0-9_]
+\b - word boundary (znaky word, nasledovane jinymi znaky nez z word
+\B - not word boundary (rozdil JavaScript vs Java)
+
+Priklady
+^[0-9]{3}[ ]?[0-9]{2}$ - PSC s nepovinnou mezerou
+^[-+]?[1-9][0-9]*(\.[0-9]+)?$ - cislo s nepovinnym znamenkem
+                                nenulovou vedouci cislici
+                                a nepovinnou desetinnou casti
+                                oddelenou teckou, ktera nesmi
+                                byt prazdna
+
+^([A-Za-z0-9_]+\.)*[A-Za-z0-9_]+@([A-Za-z0-9_]+\.)+[A-Za-z]{2,3}$
+(mailova adres z pismen anglicke abecedy, cisli a podtrzitek,
+domenou alespon 2. urovne a nejvyssi domenou 2-3 pismena
+
+
